@@ -1,0 +1,42 @@
+{ "name":    "XML"
+, "url":     "https://github.com/stratuseditor/XML.sebundle"
+, "author":  "sentientwaffle"
+, "version": "0.0.1"
+
+, "fileTypes": ["\\.xml", "\\.plist", "\\.atom"]
+
+, "preferences":
+  { "tab":   "  "
+  , "pairs": {"<": ">"}
+  }
+
+, "syntax":
+  { "$":
+    [ { "token": "comment"
+      , "begin": "[<][!]"
+      , "end":   "[>]"
+      }
+    
+    , { "token": "comment"
+      , "begin": "[<][?]"
+      , "end":   "[?][>]"
+      }
+    
+    , { "token":   "entity.tag"
+      , "begin":   "[<]/?\\w+"
+      , "end":     "/?[>]"
+      , "include":
+        [ { "token": "entity.tag.attribute"
+          , "match": "[\\w-]+[=]"
+          }
+        , { "token": "string.literal"
+          , "match": "\"[^\"]*\""
+          }
+        , { "token": "string.literal"
+          , "match": "'[^']*'"
+          }
+        ]
+      }
+    ]
+  }
+}
