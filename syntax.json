@@ -3,7 +3,7 @@
 , "author":  "sentientwaffle"
 , "version": "0.0.1"
 
-, "fileTypes": ["\\.xml", "\\.plist", "\\.atom"]
+, "fileTypes": ["\\.xml", "\\.plist", "\\.atom", "\\.rss"]
 
 , "preferences":
   { "tab":   "  "
